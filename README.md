@@ -36,17 +36,6 @@ The application runs as an interactive Colab app using `ipywidgets`, with a side
 |---|---|
 | ![Sensors screen](assets/screenshots/sensors.png) | ![Plant journal screen](assets/screenshots/journal.png) |
 
-Suggested screenshot filenames:
-
-```text
-assets/screenshots/dashboard.png
-assets/screenshots/search.png
-assets/screenshots/chatbot.png
-assets/screenshots/upload-image.png
-assets/screenshots/sensors.png
-assets/screenshots/journal.png
-```
-
 ---
 
 ## ✨ Main Features
