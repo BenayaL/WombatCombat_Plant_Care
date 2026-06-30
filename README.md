@@ -1,11 +1,11 @@
-# WombatCombat Plant Care
+# 🌿 WombatCombat Plant Care
 
 Academic Google Colab project for the **Introduction to Cloud Computing** course.  
 The system monitors and manages **Milk Thistle (Silybum marianum)** using cloud services, Firebase, IoT sensor data, academic search, RAG, Gemini AI, Hugging Face image comparison, and an interactive Colab UI.
 
 ---
 
-## Project Overview
+## 📌 Project Overview
 
 **WombatCombat Plant Care** is a cloud-based smart agriculture prototype built inside a single Google Colab notebook.  
 The system is designed for users who want to monitor plant condition, analyze sensor readings, search academic plant-related articles, ask AI-based questions, upload plant images, and maintain a plant care journal.
@@ -14,23 +14,58 @@ The application runs as an interactive Colab app using `ipywidgets`, with a side
 
 ---
 
-## Main Features
+## 🖼️ Project Screenshots
 
-### 1. Dashboard
+> Place your screenshots inside this folder in the repository:
+>
+> ```text
+> assets/screenshots/
+> ```
+>
+> Then rename the screenshots according to the filenames below, or update the paths in this table.
+
+| Dashboard | Academic Search / RAG |
+|---|---|
+| ![Dashboard screen](assets/screenshots/dashboard.png) | ![Search screen](assets/screenshots/search.png) |
+
+| Chatbot | Image Upload |
+|---|---|
+| ![Chatbot screen](assets/screenshots/chatbot.png) | ![Upload image screen](assets/screenshots/upload-image.png) |
+
+| Sensors | Plant Journal |
+|---|---|
+| ![Sensors screen](assets/screenshots/sensors.png) | ![Plant journal screen](assets/screenshots/journal.png) |
+
+Suggested screenshot filenames:
+
+```text
+assets/screenshots/dashboard.png
+assets/screenshots/search.png
+assets/screenshots/chatbot.png
+assets/screenshots/upload-image.png
+assets/screenshots/sensors.png
+assets/screenshots/journal.png
+```
+
+---
+
+## ✨ Main Features
+
+### 📊 1. Dashboard
 - Displays the monitored plant profile.
 - Shows latest temperature and humidity readings.
 - Calculates plant health status based on configured thresholds.
 - Displays daily average temperature.
 - Displays temperature fluctuation and trend.
-- Uses green/purple visual styling.
+- Uses green/purple visual styling inspired by Milk Thistle.
 
-### 2. Sensors
+### 🌡️ 2. Sensors
 - Connects to the course IoT server.
 - Fetches temperature and humidity readings.
 - Saves sensor history and latest summaries to Firebase when Firebase is configured.
 - Handles unavailable feeds safely.
 
-### 3. Academic Search + RAG
+### 🔎 3. Academic Search + RAG
 - Loads academic PDF articles about Milk Thistle.
 - Extracts text from PDFs.
 - Builds an inverted index.
@@ -39,18 +74,18 @@ The application runs as an interactive Colab app using `ipywidgets`, with a side
 - Uses Gemini for RAG answers when an API key is configured.
 - Falls back to a simple local RAG answer when Gemini is unavailable.
 
-### 4. Chatbot
+### 🤖 4. Chatbot
 - Uses Gemini when available for intelligent plant-care responses.
 - Includes sensor context in chatbot answers.
 - Falls back to an NLTK rule-based chatbot when Gemini is disabled or unavailable.
 
-### 5. Upload Image
+### 🖼️ 5. Upload Image
 - Allows uploading a plant image.
 - Compares the image to samples from the Hugging Face PlantNet-300K dataset.
 - Uses simple RGB feature extraction and cosine similarity.
 - Can use Gemini to generate a plant diagnosis when configured.
 
-### 6. Plant Journal
+### 📝 6. Plant Journal
 - Allows users to save plant-care events such as watering, fertilizing, leaf checks, pests, problems, and general notes.
 - Stores journal events in Firebase when configured.
 - Supports deleting journal events.
@@ -58,7 +93,7 @@ The application runs as an interactive Colab app using `ipywidgets`, with a side
 
 ---
 
-## Technologies Used
+## 🧰 Technologies Used
 
 - **Google Colab** – main runtime environment.
 - **Python** – project implementation language.
@@ -74,7 +109,7 @@ The application runs as an interactive Colab app using `ipywidgets`, with a side
 
 ---
 
-## Notebook File
+## 📓 Notebook File
 
 The main project file is:
 
@@ -86,7 +121,7 @@ Run the notebook from top to bottom in Google Colab.
 
 ---
 
-## Installation
+## ⚙️ Installation
 
 The first code cell installs all required Python packages:
 
@@ -98,7 +133,7 @@ No manual installation is required when running in Colab.
 
 ---
 
-## Configuration
+## 🔐 Configuration
 
 Before running the full project, open the credentials/configuration cell and fill in only the values you need.
 
@@ -111,7 +146,7 @@ FIREBASE_SERVICE_ACCOUNT_JSON = {
 }
 ```
 
-### Gemini
+### 🔮 Gemini
 
 To enable Gemini features, set:
 
@@ -121,7 +156,7 @@ GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
 
 If this value is empty, the project automatically disables Gemini and uses fallback behavior.
 
-### Firebase
+### 🔥 Firebase
 
 To enable Firebase, set:
 
@@ -136,14 +171,14 @@ FIREBASE_SERVICE_ACCOUNT_JSON = {
 
 If Firebase credentials are incomplete, the project continues in offline/fallback mode where possible.
 
-### Hugging Face
+### 🤗 Hugging Face
 
 The Hugging Face token should not be committed to GitHub.  
 When running the notebook, paste the token only inside Colab if needed.
 
 ---
 
-## Important Security Notes
+## 🚨 Important Security Notes
 
 Do **not** commit real credentials to GitHub.
 
@@ -163,7 +198,7 @@ Recommended workflow:
 
 ---
 
-## How to Run
+## ▶️ How to Run
 
 1. Open the notebook in Google Colab.
 2. Run the installation/import cells.
@@ -171,16 +206,16 @@ Recommended workflow:
 4. Run all cells from top to bottom.
 5. The final cell displays the WombatCombat application.
 6. Use the sidebar to navigate between:
-   - Dashboard
-   - Chatbot
-   - Search
-   - Upload Image
-   - Sensors
-   - Journal
+   - 📊 Dashboard
+   - 🤖 Chatbot
+   - 🔎 Search
+   - 🖼️ Upload Image
+   - 🌡️ Sensors
+   - 📝 Journal
 
 ---
 
-## Project Architecture
+## 🏗️ Project Architecture
 
 The notebook is organized into service-style sections:
 
@@ -222,30 +257,30 @@ This structure follows a modular service-based style inside a single Colab noteb
 
 ---
 
-## Microservices / Service Separation
+## 🧩 Microservices / Service Separation
 
 The project separates logic into independent services:
 
-### Sensor Service
+### 🌡️ Sensor Service
 Responsible for fetching IoT data from the course server and returning clean sensor data.
 
-### Firebase Service
+### 🔥 Firebase Service
 Responsible for reading and writing persistent cloud data such as sensor history, journal events, care points, and search index.
 
-### Search and RAG Service
+### 🔎 Search and RAG Service
 Responsible for loading academic articles, building the inverted index, searching documents, and producing RAG-based answers.
 
-### Hugging Face Service
+### 🤗 Hugging Face Service
 Responsible for loading image samples and comparing uploaded images to PlantNet references.
 
-### Plant Analytics Service
+### 📈 Plant Analytics Service
 Responsible for calculating health status, daily averages, fluctuations, and trends from raw sensor data.
 
 This separation improves readability, maintainability, and makes the notebook easier to explain in the final presentation.
 
 ---
 
-## Academic Articles
+## 📚 Academic Articles
 
 The project uses academic PDF articles related to **Silybum marianum / Milk Thistle**, including metadata such as article title, authors, and DOI/URL.
 
@@ -260,20 +295,20 @@ Make sure the Google Drive folder is accessible when running the notebook.
 
 ---
 
-## KPI Examples
+## 📏 KPI Examples
 
 Relevant KPIs for this project include:
 
-- Sensor data freshness – how recently temperature/humidity data was received.
-- Plant health status – whether readings are within recommended thresholds.
-- Search relevance – whether academic search results match the query.
-- RAG answer quality – whether answers are grounded in retrieved article context.
-- Journal activity – number of care events saved by the user.
-- Care points – gamification score based on plant-care actions.
+- **Sensor data freshness** – how recently temperature/humidity data was received.
+- **Plant health status** – whether readings are within recommended thresholds.
+- **Search relevance** – whether academic search results match the query.
+- **RAG answer quality** – whether answers are grounded in retrieved article context.
+- **Journal activity** – number of care events saved by the user.
+- **Care points** – gamification score based on plant-care actions.
 
 ---
 
-## Known Limitations
+## ⚠️ Known Limitations
 
 - The project depends on external services, so some features may be unavailable if:
   - Gemini quota is exceeded.
@@ -286,7 +321,7 @@ Relevant KPIs for this project include:
 
 ---
 
-## GitHub Upload Checklist
+## ✅ GitHub Upload Checklist
 
 Before pushing to GitHub:
 
@@ -297,6 +332,7 @@ Before pushing to GitHub:
 - [ ] Clear all notebook outputs.
 - [ ] Keep only placeholder credentials.
 - [ ] Add this `README.md`.
+- [ ] Add project screenshots under `assets/screenshots/`.
 - [ ] Add a `.gitignore` if needed.
 
 Suggested `.gitignore`:
@@ -314,7 +350,7 @@ __pycache__/
 
 ---
 
-## Authors
+## 👥 Authors
 
 WombatCombat Team  
 Introduction to Cloud Computing Course  
@@ -322,7 +358,7 @@ Braude College of Engineering
 
 ---
 
-## Disclaimer
+## 📄 Disclaimer
 
 This project was created for academic purposes.  
 The recommendations and analysis generated by the system should not replace professional agricultural advice.
